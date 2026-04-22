@@ -73,7 +73,7 @@ const List = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {users.map((user) => (
+              {users?.map((user) => (
                 <TableRow key={user._id}>
                   <TableCell className='tableCell'>{user._id}</TableCell>
                   <TableCell className='tableCell'>

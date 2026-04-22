@@ -10,7 +10,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import AddMoneyModal from './AddMoneyModal'
-import { USDollar } from '../../pages/utils/helpOptions'
+import { INRFormat } from '../../pages/utils/helpOptions'
 import Loader from '../Loader/Loader'
 
 const Widget = ({ type }) => {
@@ -102,10 +102,10 @@ const Widget = ({ type }) => {
       <div className='left'>
         <span className='title'>{data.title}</span>
         <span className='counter'>
-          {data.isSend && moneySend}
-          {data.isReceived && moneyReceived}
-          {data.isAnyReq && requestReceived}
-          {data.isBalance && USDollar.format(balance)}
+          {data.isSend && INRFormat.format(moneySend)}
+          {data.isReceived && INRFormat.format(moneyReceived)}
+          {data.isAnyReq && INRFormat.format(requestReceived)}
+          {data.isBalance && INRFormat.format(balance)}
         </span>
         {data.link === '/balance' ? (
           <span

@@ -28,8 +28,8 @@ const SendModal = ({ setSendModalOpen, receiverId }) => {
     sender: _id,
     receiver: receiverId,
     amount: '',
-    transactionType: '',
-    reference: '',
+    transactionType: 'payment',
+    reference: 'transaction ID',
   })
 
   const { sender, receiver, amount, transactionType, reference } = formData
@@ -106,7 +106,7 @@ const SendModal = ({ setSendModalOpen, receiverId }) => {
                       onChange={onChange}
                       min='1'
                       max='100000'
-                      placeholder='$1000'
+                      placeholder='₹1000'
                       required
                     />
                   </div>

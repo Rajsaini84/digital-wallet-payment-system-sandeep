@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { reset, requestSend } from '../../features/request/requestSlice'
 import Loader from '../../components/Loader/Loader'
-import { optionsDate, optionsTime, USDollar } from '../utils/helpOptions'
+import { optionsDate, optionsTime, INRFormat } from '../utils/helpOptions'
 
 const RequestSend = () => {
   const dispatch = useDispatch()
@@ -76,7 +76,7 @@ const RequestSend = () => {
                 </span>
               </TableCell>
               <TableCell className='tableCell'>
-                {USDollar.format(transaction.amount)}
+                {INRFormat.format(transaction.amount)}
               </TableCell>
               <TableCell className='tableCell date'>
                 {transaction.status === 'accepted' ? (

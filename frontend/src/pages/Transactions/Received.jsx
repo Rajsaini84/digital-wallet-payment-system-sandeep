@@ -13,7 +13,7 @@ import {
   getReceivedTransactions,
 } from '../../features/transactions/transactionSlice'
 import Loader from '../../components/Loader/Loader'
-import { optionsDate, optionsTime, USDollar } from '../utils/helpOptions'
+import { optionsDate, optionsTime, INRFormat } from '../utils/helpOptions'
 
 const Received = () => {
   const dispatch = useDispatch()
@@ -98,7 +98,7 @@ const Received = () => {
               </TableCell>
 
               <TableCell className='tableCell'>
-                {USDollar.format(transaction.amount)}
+                {INRFormat.format(transaction.amount)}
               </TableCell>
               <TableCell className='tableCell'>
                 {transaction.reference}

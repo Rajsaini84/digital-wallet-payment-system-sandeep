@@ -121,10 +121,23 @@ export const authSlice = createSlice({
         state.isLoading = false
         state.isError = true
         state.message = action.payload
-        state.users = null
+        state.users = []
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = null
+      })
+      .addCase('transaction/send/fulfilled', (state, action) => {
+        if (state.user) {
+          state.user.moneySend += Number(action.payload.amount)
+          state.user.balance -= Number(action.payload.amount)
+          localStorage.setItem('user', JSON.stringify(state.user))
+        }
+      })
+      .addCase('transaction/addMoney/fulfilled', (state, action) => {
+        if (state.user && action.payload.amount) {
+          state.user.balance += Number(action.payload.amount)
+          localStorage.setItem('user', JSON.stringify(state.user))
+        }
       })
   },
 })

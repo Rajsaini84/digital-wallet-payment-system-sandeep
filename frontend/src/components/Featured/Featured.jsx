@@ -19,7 +19,7 @@ const Featured = () => {
           <CircularProgressbar value={70} text={'70%'} strokeWidth={4} />
         </div>
         <p className='title'>Total sales made today</p>
-        <p className='amount'>$420</p>
+        <p className='amount'>₹420</p>
         <p className='desc'>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit
           itaque tenetur dolorum iusto?
@@ -29,21 +29,21 @@ const Featured = () => {
             <div className='itemTitle'>Target</div>
             <div className='itemResult positive'>
               <KeyboardArrowUpRounded fontSize='small' />
-              <div className='resultAmount'>$12.4k</div>
+              <div className='resultAmount'>₹12.4k</div>
             </div>
           </div>
           <div className='item'>
             <div className='itemTitle'>Last Week</div>
             <div className='itemResult negative'>
               <KeyboardArrowDownRounded fontSize='small' />
-              <div className='resultAmount'>$12.4k</div>
+              <div className='resultAmount'>₹12.4k</div>
             </div>
           </div>
           <div className='item'>
             <div className='itemTitle'>Last Month</div>
             <div className='itemResult negative'>
               <KeyboardArrowDownRounded fontSize='small' />
-              <div className='resultAmount'>$12.4k</div>
+              <div className='resultAmount'>₹12.4k</div>
             </div>
           </div>
         </div>

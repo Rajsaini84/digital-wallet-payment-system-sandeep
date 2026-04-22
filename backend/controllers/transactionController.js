@@ -41,12 +41,12 @@ const transferAmount = asyncHandler(async (req, res) => {
     })
     await User.findByIdAndUpdate(
       sender,
-      { $inc: { moneySend: 1 } },
+      { $inc: { moneySend: amount } },
       { new: true }
     )
     await User.findByIdAndUpdate(
       receiver,
-      { $inc: { moneyReceived: 1 } },
+      { $inc: { moneyReceived: amount } },
       { new: true }
     )
 
@@ -165,7 +165,7 @@ const deposit = asyncHandler(async (req, res) => {
       { $inc: { balance: amount } },
       { new: true }
     )
-    res.status(200).json({ msg: `$${amount} added to your account` })
+    res.status(200).json({ msg: `₹${amount} added to your account`, amount: Number(amount) })
   } else {
     res.status(400)
     throw new Error('user not found')

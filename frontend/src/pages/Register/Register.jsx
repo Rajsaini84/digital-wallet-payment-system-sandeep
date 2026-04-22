@@ -12,7 +12,7 @@ const Register = () => {
     password: '',
     phone: '',
     address: '',
-    identificationType: '',
+    identificationType: 'driver license',
   })
 
   const { name, email, password, phone, address, identificationType } = formData
